@@ -52,7 +52,7 @@ def promotion_image():
                      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
                      crossorigin="anonymous">
                     <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
-                    <title>Привет, Яндекс!</title>
+                    <title>Колонизация</title>
                   </head>
                   <body>
                     <h1>Жди нас, Марс!</h1>
@@ -81,7 +81,7 @@ def astronaut_selection():
                              integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
                              crossorigin="anonymous">
                             <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
-                            <title>Привет, Яндекс!</title>
+                            <title>Отбор астронавтов</title>
                           </head>
                           <body>
                                     <h1 class="title">Анкета претендента</h1>
@@ -158,6 +158,31 @@ def astronaut_selection():
                         </html>'''
     elif request.method == 'POST':
         return "Форма отправлена"
+
+
+# Варианты выбора
+@app.route('/choice/<planet_name>')
+def choice(planet_name):
+    return f'''<!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+                     rel="stylesheet" 
+                     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+                     crossorigin="anonymous">
+                    <title>Варианты выбора</title>
+                  </head>
+                  <body>
+                    <h1>Мое предложение: {planet_name}</h1>
+                    <p>Планета - это большое округлое астрономическое тело.</p>
+                    <p class="bg-success p-2 text-white">Планетами (др.-греч. πλανήτης, от др.-греч. πλάνης — «странник») греки называли т.н. «блуждающие звёзды».</p>
+                    <p class="bg-danger p-2 text-white">По мере развития науки представления о планетах менялись в немалой степени и благодаря открытию новых объектов и обнаружению различий между ними.</p>
+                    <p class="bg-primary p-2 text-white">По состоянию на 16 июня 2022 года достоверно подтверждено существование 5098 экзопланет в 3770 планетных системах, из которых в 825 имеется более одной планеты.</p>
+                    <p class="bg-warning p-2 text-black"> Размеры известных экзопланет лежат в пределах от размеров планет земной группы до более крупных, чем планеты-гиганты!</p>
+                  </body>
+                </html>'''
 
 
 if __name__ == '__main__':
