@@ -185,6 +185,97 @@ def choice(planet_name):
                 </html>'''
 
 
+# Результат отбора
+@app.route('/results/<nickname>/<int:level>/<float:rating>')
+def results(nickname, level, rating):
+    return f'''<!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+                     rel="stylesheet" 
+                     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+                     crossorigin="anonymous">
+                    <title>Результаты</title>
+                  </head>
+                  <body>
+                    <h1>Результаты отбора</h1>
+                    <h4>Претендента на участие в миссии {nickname}:</h4>
+                    <h6 class="bg-success p-2 text-white">Поздравляем! Ваш рейтинг после {level} этапа отбора:</h6>
+                    <h6>составляет {rating}!</h6>
+                    <h5 class="bg-primary p-2 text-white">Желаем удачи!</h5>
+                  </body>
+                </html>'''
+
+
+# Загрузка файла
+@app.route('/load_photo')
+def load_photo():
+
+    if request.method == 'GET':
+        return f'''<!doctype html>
+                        <html lang="en">
+                          <head>
+                            <meta charset="utf-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+                             rel="stylesheet" 
+                             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+                             crossorigin="anonymous">
+                            <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
+                            <title>Отбор астронавтов</title>
+                          </head>
+                          <body>
+                                    <h1 class="title">Загрузка фотографии</h1>
+                                    <h4 class="title">на участие в миссии</h4>
+                                    <div>
+                                        <form class="login_form" method="post">
+
+                                            <div class="form-group margin">
+                                                <label class="margin" for="photo">Приложите фотографию</label>
+                                                <input type="file" class="form-control-file" id="photo" name="file">
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary">Отправить</button>
+                                        </form>
+                                    </div>
+                                  </body>
+                        </html>'''
+
+    elif request.method == 'POST':
+        return f'''<!doctype html>
+                        <html lang="en">
+                          <head>
+                            <meta charset="utf-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+                             rel="stylesheet" 
+                             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+                             crossorigin="anonymous">
+                            <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
+                            <title>Отбор астронавтов</title>
+                          </head>
+                          <body>
+                                    <h1 class="title">Загрузка фотографии</h1>
+                                    <h4 class="title">на участие в миссии</h4>
+                                    <div>
+                                        <form class="login_form" method="post">
+
+                                            <div class="form-group margin">
+                                                <label class="margin" for="photo">Приложите фотографию</label>
+                                                <input type="file" class="form-control-file" id="photo" name="file">
+                                            </div>
+                                            
+                                            <img src="{url_for('static', filename='img/image.jpg')}" alt="Не получилось отобразить изображение.">
+
+                                            <button type="submit" class="btn btn-primary">Отправить</button>
+                                        </form>
+                                    </div>
+                                  </body>
+                        </html>'''
+
+
 # Пейзажи Марса
 @app.route('/cat')
 def cat():
