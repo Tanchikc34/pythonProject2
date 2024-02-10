@@ -210,9 +210,8 @@ def results(nickname, level, rating):
 
 
 # Загрузка файла
-@app.route('/load_photo')
+@app.route('/load_photo', methods=['POST', 'GET'])
 def load_photo():
-
     if request.method == 'GET':
         return f'''<!doctype html>
                         <html lang="en">
@@ -230,20 +229,22 @@ def load_photo():
                                     <h1 class="title">Загрузка фотографии</h1>
                                     <h4 class="title">на участие в миссии</h4>
                                     <div>
-                                        <form class="login_form" method="post">
+                                        <form class="login_form" method="post" enctype="multipart/form-data">
 
                                             <div class="form-group margin">
                                                 <label class="margin" for="photo">Приложите фотографию</label>
                                                 <input type="file" class="form-control-file" id="photo" name="file">
+                                               
                                             </div>
-
+                                            <img class="margin" src="{url_for('static', filename='img/iu.jpg')}" alt="" width="430" height="300">
                                             <button type="submit" class="btn btn-primary">Отправить</button>
                                         </form>
                                     </div>
                                   </body>
                         </html>'''
-
     elif request.method == 'POST':
+        f = request.files['file']
+        f.save("static/img/iu.jpg")
         return f'''<!doctype html>
                         <html lang="en">
                           <head>
@@ -260,15 +261,14 @@ def load_photo():
                                     <h1 class="title">Загрузка фотографии</h1>
                                     <h4 class="title">на участие в миссии</h4>
                                     <div>
-                                        <form class="login_form" method="post">
+                                        <form class="login_form" method="post" enctype="multipart/form-data">
 
                                             <div class="form-group margin">
                                                 <label class="margin" for="photo">Приложите фотографию</label>
                                                 <input type="file" class="form-control-file" id="photo" name="file">
-                                            </div>
-                                            
-                                            <img src="{url_for('static', filename='img/image.jpg')}" alt="Не получилось отобразить изображение.">
 
+                                            </div>
+                                            <img class="margin" src="{url_for('static', filename='img/iu.jpg')}" alt="" width="430" height="300">
                                             <button type="submit" class="btn btn-primary">Отправить</button>
                                         </form>
                                     </div>
@@ -277,8 +277,8 @@ def load_photo():
 
 
 # Пейзажи Марса
-@app.route('/cat')
-def cat():
+@app.route('/carousel')
+def carousel():
     return f''''''
 
 
