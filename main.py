@@ -33,7 +33,7 @@ def image_mars():
                   </head>
                   <body>
                     <h1>Жди нас, Марс!</h1>
-                    <img src="https://klike.net/uploads/posts/2023-01/1674455123_3-61.jpg" alt="<Альтернативный текст для изображения>" width="450" height="300">
+                    <img src="https://cdnn21.img.ria.ru/images/156391/10/1563911070_414:0:2462:2048_1920x0_80_0_0_17fb70b937e976b5eb98813b1c7175f7.jpg" alt="<Альтернативный текст для изображения>" width="300" height="300">
                     <p>Вот она какая, красная планета.</p>
                   </body>
                 </html>"""
@@ -56,7 +56,7 @@ def promotion_image():
                   </head>
                   <body>
                     <h1>Жди нас, Марс!</h1>
-                    <img src="{url_for('static', filename='img/image.jpg')}" alt="<Альтернативный текст для изображения>" width="450" height="300">
+                    <img src="{url_for('static', filename='img/image.png')}" alt="<Альтернативный текст для изображения>" width="490" height="300">
                     <br><br>
                     <p class="bg-success p-2 text-white">Человечество вырастает из детства.</p>
                     <p class="bg-danger p-2 text-white">Человечеству мала одна планета.</p>
@@ -103,7 +103,7 @@ def astronaut_selection():
                                                   <option>Высшее III степени</option>
                                                 </select>
                                             </div>
-                                            
+
                                             <div class="form-group margin">
                                                 <label for="form-check">Какие у Вас есть профессии?</label>
                                                 <div class="form-group row">
@@ -121,7 +121,7 @@ def astronaut_selection():
                                                 </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="form-group margin">
                                                 <label for="form-check">Укажите пол</label>
                                                 <div class="form-check">
@@ -145,12 +145,12 @@ def astronaut_selection():
                                                 <label for="photo">Приложите фотографию</label>
                                                 <input type="file" class="form-control-file" id="photo" name="file">
                                             </div>
-                                            
+
                                             <div class="form-group form-check margin">
                                                 <input type="radio" class="form-check-input" id="acceptRules" name="accept">
                                                 <label class="form-check-label" for="acceptRules">Готовы остаться на Марсе?</label>
                                             </div>
-                                            
+
                                             <button type="submit" class="btn btn-primary">Отправить</button>
                                         </form>
                                     </div>
@@ -234,7 +234,7 @@ def load_photo():
                                             <div class="form-group margin">
                                                 <label class="margin" for="photo">Приложите фотографию</label>
                                                 <input type="file" class="form-control-file" id="photo" name="file">
-                                               
+
                                             </div>
                                             <img class="margin" src="{url_for('static', filename='img/iu.jpg')}" alt="" width="430" height="300">
                                             <button type="submit" class="btn btn-primary">Отправить</button>
@@ -289,10 +289,10 @@ def carousel():
                          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
                          crossorigin="anonymous">
                         <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
-                        <title>Пейзажи Марса?</title>
+                        <title>Пейзажи Марса</title>
                       </head>
                       <body class="body_w_h">
-                      <h1 class="title2">Котики!</h1>
+                      <h1 class="title2">Пейзажи Марса</h1>
                       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -307,13 +307,13 @@ def carousel():
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="{url_for('static', filename='img/img.png')}" alt="First slide">
+            <img class="d-block w-100" src="{url_for('static', filename='img/img.jpg')}" alt="First slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="{url_for('static', filename='img/img_1.png')}" alt="Second slide">
+            <img class="d-block w-100" src="{url_for('static', filename='img/img_1.jpg')}" alt="Second slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="{url_for('static', filename='img/img_2.png')}" alt="Third slide">
+            <img class="d-block w-100" src="{url_for('static', filename='img/img_2.jpg')}" alt="Third slide">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
