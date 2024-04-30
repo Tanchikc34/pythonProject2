@@ -95,5 +95,15 @@ def carousel():
     return render_template('carousel.html', title='Марс?', files=files)
 
 
+# Личная карточка
+@app.route('/member')
+def lk():
+    with open('templates/member.json') as f:
+        tem = json.load(f)
+    mem = tem
+    print(mem)
+    return render_template('lk.html', mem=mem)
+
+
 if __name__ == '__main__':
     app.run(port=8070, host='127.0.0.1')
