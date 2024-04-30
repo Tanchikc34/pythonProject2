@@ -59,5 +59,14 @@ def auto_answer():
     return render_template('auto_answer.html', **list)
 
 
+# Двойная защита
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        return redirect('/')
+    return render_template('login.html', title='Аварийный доступ', form=form)
+
+
 if __name__ == '__main__':
     app.run(port=8070, host='127.0.0.1')
