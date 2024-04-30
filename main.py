@@ -30,15 +30,33 @@ def list_prof(list):
 
 
 # Автоматический ответ
-@app.route('/answer')
-def answer(list):
+@app.route('/answer/<title>/<surname>/<name>/<education>/<profession>/<sex>/<motivation>/<ready>')
+def answer(title, surname, name, education, profession, sex, motivation, ready):
+    list = {}
+    list['title'] = title
+    list['surname'] = surname
+    list['name'] = name
+    list['education'] = education
+    list['profession'] = profession
+    list['sex'] = sex
+    list['motivation'] = motivation
+    list['ready'] = ready
     return render_template('list_prof.html', list=list)
 
 
 # Автоматический ответ
-@app.route('/auto_answer/<list>')
-def auto_answer(list):
-    return render_template('auto_answer.html', list=list)
+@app.route('/auto_answer')
+def auto_answer():
+    list = {}
+    list['title'] = "Анкета"
+    list['surname'] = "Гут"
+    list['name'] = "Макс"
+    list['education'] = "высшее"
+    list['profession'] = "Капитан корабля"
+    list['sex'] = "М"
+    list['motivation'] = "Всегда мечтал застрять на Марсе!"
+    list['ready'] = "Да"
+    return render_template('auto_answer.html', **list)
 
 
 if __name__ == '__main__':
