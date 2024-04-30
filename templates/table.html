@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="align">
+    <h2>Оформление каюты</h2>
+    <table>
+        <tr><th>Цвет стен</th><th>Эмблема</th></tr>
+        <tr>{% if sex == 'male' %}<td bgcolor="#309143"> Тёмно-зелёный </td>{% else %}<td bgcolor="#E6821C"> Оранжевый </td>{% endif %}<td>{% if age > 21 %} <img src="{{url_for('static', filename='img/mar1.jpg')}}" alt=""> {% else %} <img src="{{url_for('static', filename='img/mar2.jpg')}}" alt=""> {% endif %}</td></tr>
+    </table>
+</div>
+{% endblock %}
