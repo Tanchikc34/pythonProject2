@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+     {% if list == 'ol' %}
+        <div >
+            <h2>Список профессий</h2>
+              <ol>
+                  <li>Повар</li>
+                  <li>Кондитер</li>
+                  <li>Шапокляк</li>
+              </ol>
+        </div>
+     {% elif list == 'ul' %}
+       <div >
+           <h2>Список профессий</h2>
+           <ul>
+               <li>Повар</li>
+               <li>Кондитер</li>
+               <li>Шапокляк</li>
+           </ul>
+       </div>
+     {% else %}
+       <div >
+           <h2>Неверный параметр</h2>
+       </div>
+     {% endif %}
+</div>
+{% endblock %}
