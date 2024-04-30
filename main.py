@@ -1,6 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+import flask_wtf
+from login import LoginForm
+import os
+from werkzeug.utils import redirect
+import json
 
+
+SECRET_KEY = os.urandom(32)
 app = Flask(__name__)
+app.config['SECRET_KEY'] = SECRET_KEY
 
 
 @app.route('/')
