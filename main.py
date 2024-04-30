@@ -23,10 +23,22 @@ def training(prof):
     return render_template('training.html', **param)
 
 
-# Тренировки в полёте
+# Список профессий
 @app.route('/list_prof/<list>')
 def list_prof(list):
     return render_template('list_prof.html', list=list)
+
+
+# Автоматический ответ
+@app.route('/answer')
+def answer(list):
+    return render_template('list_prof.html', list=list)
+
+
+# Автоматический ответ
+@app.route('/auto_answer/<list>')
+def auto_answer(list):
+    return render_template('auto_answer.html', list=list)
 
 
 if __name__ == '__main__':
