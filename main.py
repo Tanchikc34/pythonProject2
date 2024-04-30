@@ -68,5 +68,13 @@ def login():
     return render_template('login.html', title='Аварийный доступ', form=form)
 
 
+# По каютам!
+@app.route('/distribution')
+def distribution():
+    spisok = ["Марк", "Энди", "Клаус", "Мэт"]
+    # spisok = input().split(" ")
+    return render_template('distribution.html', spisok=spisok)
+
+
 if __name__ == '__main__':
     app.run(port=8070, host='127.0.0.1')
